@@ -3,10 +3,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 0.6rem;
-  background-color: #d9d9d9;
   height: 10vh;
 }
-
+.navbar,
+.footerContainer {
+  background-color: #00345f;
+  color: white;
+}
 .searchContainer {
   border-radius: 0.5rem;
   height: fit-content;
@@ -15,7 +18,10 @@
 .searchInput {
   border-radius: 0.2rem;
   padding: 0.3rem 0.5rem;
+  background-color: #d9d9d9;
+  color: black;
 }
+
 .searchInput:focus {
   border: none;
   outline: none;
@@ -33,17 +39,19 @@
 .footerContainer {
   display: flex;
   justify-content: space-around;
-  padding: .6rem 1rem;
-  background-color: #D9D9D9;
+  padding: 0.6rem 1rem;
   text-transform: capitalize;
 }
 
 .socialMedias {
   display: flex;
-  margin: .7rem 0;
+  margin: 0.7rem 0;
 }
-.socialMedias svg{
+.socialMedias svg {
   width: 20px;
   height: 20px;
-  margin-right: .5rem;
+  fill: white;
+  margin-right: 0.9rem;
 }
+
+
