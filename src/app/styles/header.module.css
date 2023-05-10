@@ -20,8 +20,10 @@
   border: none;
   border-radius: 1rem;
   animation-name: delay;
-  
+  box-shadow: inset 4px 4px 18px -15px #fff;
 }
+
+
 .headerText {
   position: relative;
   font-size: 1.7rem;
@@ -60,6 +62,12 @@
   font-weight: 800;
   text-align: center;
   font-size: 1.8rem;
+}
+
+@media screen and (max-width: 650px) {
+  .textWrapper {
+    width: 90vw;
+  }
 }
 
 @media screen and (min-width: 400px) {
