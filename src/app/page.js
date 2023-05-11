@@ -1,15 +1,11 @@
-import Main from "../../compoments/Main";
-import Header from "../../compoments/Header";
-import { getPosts } from "../../services";
-
-//import Background from "../../compoments/Background";
+import Main from "../../Compoments/Main";
+import Header from "../../Compoments/Header";
 
 export default function Home({ posts }) {
   return (
     <>
       <Header />
-      <Main/>
-      
+      <Main />
     </>
   );
 }
