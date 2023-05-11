@@ -1,4 +1,4 @@
-
+import Main from "../../compoments/Main";
 import Header from "../../compoments/Header";
 import { getPosts } from "../../services";
 
@@ -8,7 +8,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Header />
-
+      <Main/>
       
     </>
   );

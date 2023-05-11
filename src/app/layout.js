@@ -9,7 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const [isopen, setIsopen] = useState(false);
-  const [isLight, setIsLight] = useState(true)
+  const [isLight, setIsLight] = useState(true);
+  const [isSearch, setIsSearch] = useState(false);
+
   const menu_links = [
     {
       link: "home",
@@ -27,16 +29,37 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <div className={styles.navbar}>
           <span className={styles.logo}>LOGO</span>
           <svg
+            onClick={() => setIsSearch(!isSearch)}
             className="fill-blue-200 w-[2rem] h-[1.5rem] cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
           >
             <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
           </svg>
+          <div
+            className={`fixed top-[10vh] left-[50%] -translate-x-1/2 z-10 flex w-[70vw] scale-x-0 origin-left ${
+              isSearch ? "scale-x-100 duration-300" : "scale-x-0 duration-200"
+            }`}
+          >
+            <input
+              type="text"
+              placeholder="search here..."
+              className="block p-2 outline-none text-black w-[80%]"
+            />
+            <div className="p-2 bg-black rounded-r-lg w-[20%] flex items-center justify-center">
+              <svg
+                className="fill-blue-800 w-[2rem] h-[1.5rem] cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+              </svg>
+            </div>
+          </div>
 
           <div className="menu">
             <div className="flex flex-row-reverse">
@@ -66,7 +89,7 @@ export default function RootLayout({ children }) {
               <div className="mr-8 flex items-center hover:cursor-pointer">
                 <svg
                   onClick={() => setIsLight(!isLight)}
-                  className={`${isLight ? 'block': 'hidden'}`}
+                  className={`${isLight ? "block" : "hidden"}`}
                   viewBox="0 0 24 24"
                   width="30"
                   height="30"
@@ -79,7 +102,7 @@ export default function RootLayout({ children }) {
                 </svg>
                 <svg
                   onClick={() => setIsLight(!isLight)}
-                  className={`${isLight ? 'hidden': 'block'}`}
+                  className={`${isLight ? "hidden" : "block"}`}
                   viewBox="0 0 24 24"
                   width="30"
                   height="30"
@@ -111,7 +134,9 @@ export default function RootLayout({ children }) {
             </ul>
           </div>
         </div>
+
         {children}
+
         <footer className={styles.footerContainer}>
           <ul className={styles.footerLinks}>
             <li>
